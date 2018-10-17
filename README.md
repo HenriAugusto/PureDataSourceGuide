@@ -15,4 +15,6 @@ structures until being unified in version 0.35.
 
 /* the t_glist structure, which describes a list of elements that live on an area of a window
 
+The struct is on line 154
+
 (g_canvas.h)[https://github.com/pure-data/pure-data/blob/master/src/g_canvas.h] line 154
