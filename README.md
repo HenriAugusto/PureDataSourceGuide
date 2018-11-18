@@ -44,6 +44,29 @@ The struct is on line 154
 
 (g_canvas.h)[https://github.com/pure-data/pure-data/blob/master/src/g_canvas.h] line 154
 
+### getting the selected objects
+
+in the file `g_canvas.h` there is the
+
+```
+typedef struct _selection
+{
+    t_gobj *sel_what;
+    struct _selection *sel_next;
+} t_selection;
+```
+
+which allows you to access the selection
+
+```
+t_canvas *x;
+t_selection *y;
+for (y = x->gl_editor->e_selection; y; y = y->sel_next)
+    {
+        gobj_displace(y->sel_what, x, dx, dy);
+    }
+```
+
 ## GUI
 
 PD has two separate parts for its gui. The C part and the TCL part. They communicate bla bla bla (finish this)
