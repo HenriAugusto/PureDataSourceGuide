@@ -67,6 +67,17 @@ for (y = x->gl_editor->e_selection; y; y = y->sel_next)
     }
 ```
 
+### object creation
+
+objects/messages/floatatoms/comments are created in the functions (located in `g_text.c`):
+
+* **canvas_obj:**
+* **canvas_msg:**
+* **canvas_atom:** what?
+* **canvas_floatatom:**
+* **canvas_symbolatom:**
+* **canvas_bng:**
+
 ## GUI
 
 PD has two separate parts for its gui. The C part and the TCL part. They communicate bla bla bla (finish this)
