@@ -9,7 +9,7 @@ PD's graphical objects are named **t_gobj** (m_pd.h)??
 
 Actually i'm not sure because of m_pd.c line 228
 
-```
+```C
 typedef struct _text        /* patchable object - graphical, with text */
 {
     t_gobj te_g;                /* header for graphical object */
@@ -25,13 +25,28 @@ typedef struct _text        /* patchable object - graphical, with text */
 
 and also m_pd.c line 249
 
-```
+```C
    /* t_object is synonym for t_text (LATER unify them) */
 
 typedef struct _text t_object;
 ```
 
-So i'm not sure PD uses **t_gobj** or **t_object/_text**
+and just before that
+
+```C
+typedef t_class *t_pd;      /* pure datum: nothing but a class pointer */
+
+typedef struct _gobj        /* a graphical object */
+{
+    t_pd g_pd;              /* pure datum header (class) */
+    struct _gobj *g_next;   /* next in list */
+} t_gobj;
+```
+
+So inside **t_object** (*_text*) there is a **t_gobj**, which is a linked list. 
+
+Still i can't figure what **t_pd** is.
+
 ## glist
 
 /* this file defines the structure for "glists" and related structures and
@@ -42,13 +57,13 @@ structures until being unified in version 0.35.
 
 The struct is on line 154
 
-(g_canvas.h)[https://github.com/pure-data/pure-data/blob/master/src/g_canvas.h] line 154
+[g_canvas.h](https://github.com/pure-data/pure-data/blob/master/src/g_canvas.h) line 154
 
 ### getting the selected objects
 
 in the file `g_canvas.h` there is the
 
-```
+```C
 typedef struct _selection
 {
     t_gobj *sel_what;
@@ -58,7 +73,7 @@ typedef struct _selection
 
 which allows you to access the selection
 
-```
+```C
 t_canvas *x;
 t_selection *y;
 for (y = x->gl_editor->e_selection; y; y = y->sel_next)
