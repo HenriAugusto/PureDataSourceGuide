@@ -103,3 +103,13 @@ PD has two separate parts for its gui. The C part and the TCL part. They communi
    * the function **glist_drawiofor()** is the function responsible for telling the TCL side what to draw!
    
 See the **proc ::pd_bindings::sendkey** inside `pd_bindings.tcl` file and investigate how we can send the "alt" key state to canvas_key!
+
+### Inlets and Outlets positioning
+
+The mathematical formula for positioning inlets and outlest is located in the method
+
+**glist_drawiofor** in the file `g_text.c`.
+
+I still didn't figure out how PD knows if the mouse is inside an inlet/outlet.
+
+anyway i should check tryconnect inside g_editor
