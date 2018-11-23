@@ -57,7 +57,12 @@ structures until being unified in version 0.35.
 
 The struct is on line 154
 
-[g_canvas.h](https://github.com/pure-data/pure-data/blob/master/src/g_canvas.h) line 154
+[g_canvas.h](https://github.com/pure-data/pure-data/blob/master/src/g_canvas.h#L154) line 154
+
+As it can be seen on [m_pd.h](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/m_pd.h#L208):
+
+- `t_glist` is a const #define to `struct _glist`
+- `t_canvas` is also a const #define to `struct _glist`
 
 ### getting the selected objects
 
