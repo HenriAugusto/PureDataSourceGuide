@@ -29,7 +29,14 @@ and also m_pd.c line 249
    /* t_object is synonym for t_text (LATER unify them) */
 
 typedef struct _text t_object;
+
+#define ob_outlet te_outlet
+#define ob_inlet te_inlet
+#define ob_binbuf te_binbuf
+#define ob_pd te_g.g_pd
+#define ob_g te_g
 ```
+(note the defines that allows you to access the `_text` members with a new `ob_`prefix and new names)
 
 and just before that
 
