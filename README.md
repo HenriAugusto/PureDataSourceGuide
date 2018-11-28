@@ -24,7 +24,7 @@ This file includes _details_ of the PD implementation that are **subject to chan
 
 So notice that **m_pd.h** serves as a "general purpose" header file for stuff in PD that you can use "safely" and that it is unlikely that it will feature some code breaking change whie **m_imp.h** is also a "general purpose" header file that includes externs from a lot of the pd's C files (.c) that are really details of implementation and that could change at any release, breaking your code.
 
-One interesting way to see how this is put together is to notice that the important [`_class struct`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/m_imp.h#L31) is given an extern declaration in **m_pd.h** so you can reference it, but since it's definition is in **m_imp.h**, unless you also include _m_imp.h_ in your file you really can't access it's members. Also, it has a typedef aliasing it to `*t_pd**`, so henceforth the public api will know it by that name. **m_pd.h** only uses `t_class` in the extern declarations.
+One interesting way to see how this is put together is to notice that the important [`_class struct`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/m_imp.h#L31) is given an extern declaration in **m_pd.h** so you can reference it, but since it's definition is in **m_imp.h**, unless you also include _m_imp.h_ in your file you really can't access it's members. Also, it has a typedef aliasing it to `*t_pd`, so henceforth the public api will know it by that name. **m_pd.h** only uses `t_class` in the extern declarations.
 
 ```C
 189: EXTERN_STRUCT _class;
