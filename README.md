@@ -71,6 +71,29 @@ As it can be seen on [m_pd.h](https://github.com/pure-data/pure-data/blob/7c27aa
 - `t_glist` is a const #define to `struct _glist`
 - `t_canvas` is also a const #define to `struct _glist`
 
+It seens that glists are used for abstractions and t_canvas are used for toplevel patches?!
+
+```C
+struct _glist
+{
+    t_object gl_obj;            /* header in case we're a glist */         <--------------
+    t_gobj *gl_list;            /* the actual data */
+   [...]
+   [...]
+```
+
+notice the comment. Also see this function ([g_graph.c](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_graph.c#L192))
+
+```C
+t_canvas *glist_getcanvas(t_glist *x)
+{
+    while (x->gl_owner && !x->gl_havewindow && x->gl_isgraph)
+            x = x->gl_owner;
+    return((t_canvas *)x);
+}
+```
+
+
 ### getting the selected objects
 
 in the file `g_canvas.h` there is the
