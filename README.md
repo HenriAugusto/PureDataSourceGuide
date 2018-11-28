@@ -23,7 +23,7 @@ typedef struct _text        /* patchable object - graphical, with text */
 } t_text;
 ```
 
-and also m_pd.c line 249
+and also [m_pd.h line 249](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/m_pd.h#L249)
 
 ```C
    /* t_object is synonym for t_text (LATER unify them) */
