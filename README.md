@@ -106,7 +106,7 @@ As it can be seen on [m_pd.h](https://github.com/pure-data/pure-data/blob/7c27aa
 - `t_glist` is a const #define to `struct _glist`
 - `t_canvas` is also a const #define to `struct _glist`
 
-It seens that glists are used for abstractions and t_canvas are used for toplevel patches?!
+It seens that glists are used for abstractions and t_canvas are used for toplevel patches?!?!
 
 ```C
 struct _glist
@@ -129,6 +129,16 @@ t_canvas *glist_getcanvas(t_glist *x)
 ```
 
 Also see how [Else/args](https://github.com/porres/pd-else/blob/24fa7d93783dec76be7f8b947c5aad7682e98292/classes/source/args.c#L37) gets the arguments of an abstraction
+
+### The editor
+
+PD instantiates a [`t_editor`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_canvas.h#L92) each `g_list` becomes visible, i.e. when it's window is open (not necessarily literaly visible. it can be minimized).
+
+Picture the following: you have a toplevel patch called **synth.pd** and inside it you have a subpatch **[pd stuff]** and an abstractions **[crazyfilter]**.
+
+Let's say you open that patch from the menu and now you have only one patch window, the `synth.pd` one. There is an `t_editor` for that window but there **isn't** an `t_editor` for **[crazyfilter]** because since the abstraction is closed there is no point in having one consuming memory (and using cpu time upon loading) if that abstraction is closed. Only the stuff regarding it's implementation/logic should be in memory. The same goes for **[pd stuff]**. As soon as you open your subpatch or your abstraction a `t_editor` would be instantiated for each one of those windows. Similarly, as soon as you close them the corresponding `t_editor` would be destroyed.
+
+See [`canvas_create_editor(t_glist *x)`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_editor.c#L1917)
 
 
 ### getting the selected objects
