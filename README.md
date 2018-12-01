@@ -6,6 +6,8 @@ This is some notes i wrote while studying PD's source. Right know **it is NOT in
 
 - [The API](#the-api)
    - [m_pd.h](#m_pd.h)
+   - [m_imp.h](#m_imp.h)
+   - [m_pd.h vs m_imp.h](#m_pd.h_vs_m_imp.h)
 - <a id="index_gui">[GUI](#gui)</a>
 - 
 
