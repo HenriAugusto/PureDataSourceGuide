@@ -136,7 +136,7 @@ Moreover in [g_editor.c](https://github.com/HenriAugusto/pure-data/blob/master/s
 
 [`void glist_selectall(t_glist *x);`](https://github.com/HenriAugusto/pure-data/blob/fae7fab842e989b4b8ce85807a0c7cf1ad99350e/src/g_editor.c#L305)
 
-```Tcl
+```C
 static void canvas_selectall(t_canvas *x)
 {
     t_gobj *y;
@@ -155,9 +155,7 @@ static void canvas_selectall(t_canvas *x)
 }
 ```
 
-r
-
-```Tcl
+```C
 void glist_selectall(t_glist *x)
 {
     if (x->gl_editor)
