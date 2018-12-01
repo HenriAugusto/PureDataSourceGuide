@@ -171,6 +171,17 @@ static void canvas_selectall(t_canvas *x)
 }
 ```
 
+#### note
+
+in the starting coments on g_canvas.h there is this
+
+> A glist that's just a text object on its parent is always "toplevel."  An
+> embedded glist can switch back and forth to appear as a toplevel by double-
+> clicking on it.  Single-clicking a text box makes the toplevel become visible
+> and raises the window it's in.
+
+**But i don't see any difference between single or double clicking an abstraction or a sublist!**
+
 ### [t_editor](#index-t_editor)
 
 PD instantiates a [`t_editor`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_canvas.h#L92) each `g_list` becomes visible, i.e. when it's window is open (not necessarily literaly visible. it can be minimized).
