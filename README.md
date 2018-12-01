@@ -7,6 +7,7 @@ This is some notes i wrote while studying PD's source. Right know **it is NOT in
 - [The API](#the-api)
    - [m_pd.h](#m_pd.h)
 - [GUI](#gui)
+- <a id="index_gui">i'm just an anchor point test</a>
 
 ## The API
 
@@ -234,6 +235,8 @@ objects/messages/floatatoms/comments are created in the functions (located in `g
 * **canvas_bng:**
 
 ## GUI
+
+[go back](#index_gui)
 
 PD has two separate parts for its gui. The C part and the TCL part. They communicate bla bla bla (finish this)
 
