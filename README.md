@@ -10,8 +10,9 @@ This is some notes i wrote while studying PD's source. Right know **it is NOT in
    - [m_pd.h vs m_imp.h](#m_pdh-vs-m_imph)
 - <a id="index-classes-and-objects">[Classes and Objects](#classes-and-objects)</a>
 - <a id="index-glist">[glist](#glist)</a>
+   - <a id="index-t_editor">[t_editor](#t_editor)</a>
 - <a id="index-gui">[GUI](#gui)</a>
-- 
+
 
 ## The API
 
@@ -147,6 +148,8 @@ Moreover in [g_editor.c](https://github.com/HenriAugusto/pure-data/blob/master/s
 
 [`void glist_selectall(t_glist *x);`](https://github.com/HenriAugusto/pure-data/blob/fae7fab842e989b4b8ce85807a0c7cf1ad99350e/src/g_editor.c#L305)
 
+but **note that the `glist_selectall` is not used** anywhere in the code.
+
 ```C
 static void canvas_selectall(t_canvas *x)
 {
@@ -166,34 +169,7 @@ static void canvas_selectall(t_canvas *x)
 }
 ```
 
-```C
-void glist_selectall(t_glist *x)
-{
-    if (x->gl_editor)
-    {
-        glist_noselect(x);
-        if (x->gl_list)
-        {
-            t_selection *sel = (t_selection *)getbytes(sizeof(*sel));
-            t_gobj *y = x->gl_list;
-            x->gl_editor->e_selection = sel;
-            sel->sel_what = y;
-            gobj_select(y, x, 1);
-            while ((y = y->g_next))
-            {
-                t_selection *sel2 = (t_selection *)getbytes(sizeof(*sel2));
-                sel->sel_next = sel2;
-                sel = sel2;
-                sel->sel_what = y;
-                gobj_select(y, x, 1);
-            }
-            sel->sel_next = 0;
-        }
-    }
-}
-```
-
-### The editor
+### [t_editor](#index-t_editor)
 
 PD instantiates a [`t_editor`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_canvas.h#L92) each `g_list` becomes visible, i.e. when it's window is open (not necessarily literaly visible. it can be minimized).
 
