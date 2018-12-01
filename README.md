@@ -234,9 +234,7 @@ objects/messages/floatatoms/comments are created in the functions (located in `g
 * **canvas_symbolatom:**
 * **canvas_bng:**
 
-## GUI
-
-[go back](#index_gui)
+## [GUI](#index_gui)
 
 PD has two separate parts for its gui. The C part and the TCL part. They communicate bla bla bla (finish this)
 
