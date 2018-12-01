@@ -130,6 +130,60 @@ t_canvas *glist_getcanvas(t_glist *x)
 
 Also see how [Else/args](https://github.com/porres/pd-else/blob/24fa7d93783dec76be7f8b947c5aad7682e98292/classes/source/args.c#L37) gets the arguments of an abstraction
 
+Moreover in [g_editor.c](https://github.com/HenriAugusto/pure-data/blob/master/src/g_editor.c) we this two methods
+
+[`static void canvas_selectall(t_canvas *x);`](https://github.com/HenriAugusto/pure-data/blob/fae7fab842e989b4b8ce85807a0c7cf1ad99350e/src/g_editor.c#L3750)
+
+[`void glist_selectall(t_glist *x);`](https://github.com/HenriAugusto/pure-data/blob/fae7fab842e989b4b8ce85807a0c7cf1ad99350e/src/g_editor.c#L305)
+
+```Tcl
+static void canvas_selectall(t_canvas *x)
+{
+    t_gobj *y;
+    if (!x->gl_editor)
+        return;
+    if (!x->gl_edit)
+        canvas_editmode(x, 1);
+        /* if everyone is already selected deselect everyone */
+    if (!glist_selectionindex(x, 0, 0))
+        glist_noselect(x);
+    else for (y = x->gl_list; y; y = y->g_next)
+         {
+             if (!glist_isselected(x, y))
+                 glist_select(x, y);
+         }
+}
+```
+
+r
+
+```Tcl
+void glist_selectall(t_glist *x)
+{
+    if (x->gl_editor)
+    {
+        glist_noselect(x);
+        if (x->gl_list)
+        {
+            t_selection *sel = (t_selection *)getbytes(sizeof(*sel));
+            t_gobj *y = x->gl_list;
+            x->gl_editor->e_selection = sel;
+            sel->sel_what = y;
+            gobj_select(y, x, 1);
+            while ((y = y->g_next))
+            {
+                t_selection *sel2 = (t_selection *)getbytes(sizeof(*sel2));
+                sel->sel_next = sel2;
+                sel = sel2;
+                sel->sel_what = y;
+                gobj_select(y, x, 1);
+            }
+            sel->sel_next = 0;
+        }
+    }
+}
+```
+
 ### The editor
 
 PD instantiates a [`t_editor`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_canvas.h#L92) each `g_list` becomes visible, i.e. when it's window is open (not necessarily literaly visible. it can be minimized).
