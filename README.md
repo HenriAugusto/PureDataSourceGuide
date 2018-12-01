@@ -7,9 +7,10 @@ This is some notes i wrote while studying PD's source. Right know **it is NOT in
 - [The API](#the-api)
    - [m_pd.h](#m_pdh)
    - [m_imp.h](#m_imph)
-   - [m_pd.h vs m_imp.h](#m_pdh_vs_m_imph)
-- <a id="index_classes_and_objects">[Classes and Objects](#classes_and_objects)</a>   
-- <a id="index_gui">[GUI](#gui)</a>
+   - [m_pd.h vs m_imp.h](#m_pdh-vs-m_imph)
+- <a id="index-classes-and-objects">[Classes and Objects](#classes-and-objects)</a>
+- <a id="index-glist">[glist](#glist)</a>
+- <a id="index-gui">[GUI](#gui)</a>
 - 
 
 ## The API
@@ -46,7 +47,7 @@ One interesting way to see how this is put together is to notice that the import
 213: typedef t_class *t_pd; /* pure datum: nothing but a class pointer */
 ```
 
-## Classes and Objects
+## [Classes and Objects](#index-classes-and-objects)
 
 PD is written in C so there is no classes like you would find in C++ or Java for example.
 
@@ -99,7 +100,7 @@ So inside **t_object** (*_text*) there is a **t_gobj**, which is a linked list.
 
 Still i can't figure what **t_pd** is.
 
-## glist
+## [glist](#index-glist)
 
 /* this file defines the structure for "glists" and related structures and
 functions.  "Glists" and "canvases" and "graphs" used to be different
@@ -237,7 +238,7 @@ objects/messages/floatatoms/comments are created in the functions (located in `g
 * **canvas_symbolatom:**
 * **canvas_bng:**
 
-## [GUI](#index_gui)
+## [GUI](#index-gui)
 
 PD has two separate parts for its gui. The C part and the TCL part. They communicate bla bla bla (finish this)
 
