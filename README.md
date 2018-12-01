@@ -8,6 +8,7 @@ This is some notes i wrote while studying PD's source. Right know **it is NOT in
    - [m_pd.h](#m_pdh)
    - [m_imp.h](#m_imph)
    - [m_pd.h vs m_imp.h](#m_pdh_vs_m_imph)
+- <a id="index_classes_and_objects">[Classes and Objects](#classes_and_objects)</a>   
 - <a id="index_gui">[GUI](#gui)</a>
 - 
 
@@ -30,7 +31,7 @@ This file inclues the **public** API. That is, stuff that is meant to be stable 
 
 This file includes _details_ of the PD implementation that are **subject to change**. You will notice it includes the important [`struct _class`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/m_imp.h#L31) and mostly it includes a lot of `extern` declarations. Notice also those extern declarations are acompanied by a comment saying in which file those functions are located.
 
-## m_pd.h vs m_imp.h
+### m_pd.h vs m_imp.h
 
 So notice that **m_pd.h** serves as a "general purpose" header file for stuff in PD that you can use "safely" and that it is unlikely that it will feature some code breaking change whie **m_imp.h** is also a "general purpose" header file that includes externs from a lot of the pd's C files (.c) that are really details of implementation and that could change at any release, breaking your code.
 
