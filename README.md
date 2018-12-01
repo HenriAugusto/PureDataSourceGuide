@@ -6,8 +6,8 @@ This is some notes i wrote while studying PD's source. Right know **it is NOT in
 
 - [The API](#the-api)
    - [m_pd.h](#m_pd.h)
-- [GUI](#gui)
-- <a id="index_gui">i'm just an anchor point test</a>
+- <a id="index_gui">[GUI](#gui)</a>
+- 
 
 ## The API
 
