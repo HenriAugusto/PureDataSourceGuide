@@ -4,6 +4,11 @@ This is some notes i wrote while studying PD's source. Right know **it is NOT in
 
 Let me leave this here, temoprarily: [Github Markdown Same Page Link](https://stackoverflow.com/questions/27981247/github-markdown-same-page-link)
 
+**How to use it?**
+
+> Click what you're looking for in the index to go to it's respective file. To go back, click the header and it should bring you to this page, to it's position on the index
+
+
 # Index
 
 - [The API](#the-api)
