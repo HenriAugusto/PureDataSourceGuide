@@ -11,6 +11,7 @@ Let me leave this here, temoprarily: [Github Markdown Same Page Link](https://st
 
 # Index
 
+- [extra stuff on the wiki](https://github.com/HenriAugusto/my-pure-data-source-studies/wiki)
 - <a id="index-api">[The API](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#the-api)</a>
    - [m_pd.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_pdh)
    - [m_imp.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_imph)
