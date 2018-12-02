@@ -3,7 +3,8 @@
 - <a id="index-api">[The API](#the-api)</a>
    - <a id="index-m_pdh">[m_pd.h](#m_pdh)</a>
    - <a id="index-m_imph">[m_imp.h](#m_imph)</a>
-   - <a id="index-m_pd-vs-m_imph">[m_pd.h vs m_imp.h](#m_pdh-vs-m_imph)</a>
+   - <a id="index-m_pdh-vs-m_imph">[m_pd.h vs m_imp.h](#m_pdh-vs-m_imph)</a>
+   - <a id="index-g_canvash">[g_canvas.h](#g_canvash)</a>
 
 Back to the [**main index**](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/README.md#index-api)
 
@@ -40,3 +41,9 @@ One interesting way to see how this is put together is to notice that the import
 
 213: typedef t_class *t_pd; /* pure datum: nothing but a class pointer */
 ```
+## [g_canvas.h](#index-g_canvash)
+
+As the note in the file states, it is private API.
+
+> /* NOTE: this file describes Pd implementation details which may change
+> in future releases.  The public (stable) API is in m_pd.h. */
