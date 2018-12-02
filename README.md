@@ -11,7 +11,7 @@ Let me leave this here, temoprarily: [Github Markdown Same Page Link](https://st
 
 # Index
 
-- <a id="index-api">[The API](#the-api)</a>
+- <a id="index-api">[The API](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#the-api)</a>
    - [m_pd.h](#m_pdh)
    - [m_imp.h](#m_imph)
    - [m_pd.h vs m_imp.h](#m_pdh-vs-m_imph)
