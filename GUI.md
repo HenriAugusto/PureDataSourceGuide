@@ -5,6 +5,8 @@
       - <a id="index-how-the-gui-knows-what-to-draw">[How the GUI knows what to draw](#how-the-gui-knows-what-to-draw)</a>
          - <a id="index-creating-objects">[Creating Objects](#creating-objects)</a>
 
+Back to the [**main index**](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/README.md#index-api)
+
 # [GUI](#index-gui)
 
 PD has two separate parts for its gui. The C part and the TCL part. They communicate bla bla bla (finish this)
