@@ -11,7 +11,7 @@ Let me leave this here, temoprarily: [Github Markdown Same Page Link](https://st
    - [m_imp.h](#m_imph)
    - [m_pd.h vs m_imp.h](#m_pdh-vs-m_imph)
 - <a id="index-classes-and-objects">[Classes and Objects](#classes-and-objects)</a>
-- <a id="index-glist">[glist](#glist)</a>
+- <a id="index-glist">[t_glist](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/t_glist.md#glist)</a>
    - <a id="index-t_editor">[t_editor](#t_editor)</a>
 - <a id="index-gui">[GUI](#gui)</a>
 
