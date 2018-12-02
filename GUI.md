@@ -3,6 +3,7 @@
       - <a id="index-inlets-and-outlets-positioning">[inlets and outlets positioning](#inlets-and-outlets-positioning)</a>
    - <a id="index-tcl-side">[TCL side](#tcl-side)</a>
       - <a id="index-how-the-gui-knows-what-to-draw">[How the GUI knows what to draw](#how-the-gui-knows-what-to-draw)</a>
+         - <a id="index-creating-objects">[Creating Objects](#creating-objects)</a>
 
 # [GUI](#index-gui)
 
@@ -33,9 +34,13 @@ anyway i should check tryconnect inside g_editor
 
 The [C side](#c-side) of the GUI tells each canvas what to draw by creating (and modifying) widgets on it.
 
-#### when you're typing in an object there are actually two widgets in the canvas.
+#### [Creating objects](#index-creating-objects)
+
+when you're typing in an object there are actually two widgets in the canvas.
 
 One is a text one and the other is a rectangle one. The rectangle one has exactly the same tag but with an _"R"_ in the end. You can see it by using PD with the **"-d 1"** command line flag and editing an object.
+
+Each text input is controlled by an [`t_rtext`](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/t_rtext.md#t_rtext) struct and it's respective methods.
 
 ```tcl
 set rectangle "$::current_tag"
