@@ -1,3 +1,4 @@
+
 # my-pure-data-source-studies
 
 This is some notes i wrote while studying PD's source. Right know **it is NOT intended to be something read by others** but in the future i have plans to turn it on a development guide and organize it so everyone can contribute with PD's source code knowledge.
@@ -10,6 +11,10 @@ Let me leave this here, temoprarily: [Github Markdown Same Page Link](https://st
 
 
 # Index
+
+See this
+
+https://blog.github.com/2013-01-31-relative-links-in-markup-files/
 
 - [extra stuff on the wiki](https://github.com/HenriAugusto/my-pure-data-source-studies/wiki)
 - <a id="index-api">[The API](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#the-api)</a>
