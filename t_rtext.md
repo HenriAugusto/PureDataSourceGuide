@@ -1,5 +1,8 @@
 # t_rtext
 
+The [`t_rtext`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_rtext.c#L27) structure is used for handling what the user types in the object boxes. Like when you create an object box for example and you type [print].
+
+
 ```C
 struct _rtext
 {
