@@ -17,8 +17,8 @@ See this
 https://blog.github.com/2013-01-31-relative-links-in-markup-files/
 
 - [extra stuff on the wiki](https://github.com/HenriAugusto/my-pure-data-source-studies/wiki)
-- <a id="index-api">[The API](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#the-api)</a>
-   - [m_pd.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_pdh)
+- <a id="index-api">[The API](API.md#the-api)</a>
+   - [m_pd.h](API.md#m_pdh)
    - [m_imp.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_imph)
    - [m_pd.h vs m_imp.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_pdh-vs-m_imph)
 - <a id="index-classes-and-objects">[Classes and Objects](classes-and-objects.md#classes-and-objects)</a>
