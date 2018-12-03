@@ -21,7 +21,7 @@ https://blog.github.com/2013-01-31-relative-links-in-markup-files/
    - [m_pd.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_pdh)
    - [m_imp.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_imph)
    - [m_pd.h vs m_imp.h](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/API.md#m_pdh-vs-m_imph)
-- <a id="index-classes-and-objects">[Classes and Objects](#classes-and-objects)</a>
+- <a id="index-classes-and-objects">[Classes and Objects](#classes-and-objects.md)</a>
 - <a id="index-glist">[t_glist](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/t_glist.md#glist)</a>
    - <a id="index-t_editor">[t_editor](#t_editor)</a>
 - <a id="index-gui">[GUI](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/GUI.md#gui)</a>
