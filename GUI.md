@@ -1,5 +1,6 @@
 - <a id="index-gui">[GUI](#gui)</a>
    - <a id="index-c-side">[C side](#c-side)</a>
+      - <a id="index-mouse-input:-handling>[Mouse Input: handling](#mouse-input:-handling)</a>
       - <a id="index-inlets-and-outlets-positioning">[inlets and outlets positioning](#inlets-and-outlets-positioning)</a>
    - <a id="index-tcl-side">[TCL side](#tcl-side)</a>
       - <a id="index-how-the-gui-knows-what-to-draw">[How the GUI knows what to draw](#how-the-gui-knows-what-to-draw)</a>
@@ -20,7 +21,7 @@ See the **proc ::pd_bindings::sendkey** inside `pd_bindings.tcl` file and invest
 
 ## [C side](#index-C-side)
 
-### [Mouse Input: handling]()
+### [Mouse Input: handling](#index-mouse-input:-handling)
 
 [`canvas_doclick`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_editor.c#L2286)
 
