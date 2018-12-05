@@ -20,6 +20,10 @@ See the **proc ::pd_bindings::sendkey** inside `pd_bindings.tcl` file and invest
 
 ## [C side](#index-C-side)
 
+### [Mouse Input: handling]()
+
+[`canvas_doclick`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_editor.c#L2286)
+
 ### [Inlets and Outlets positioning](#index-inlets-and-outlets-positioning)
 
 The mathematical formula for positioning inlets and outlest is located in the method
