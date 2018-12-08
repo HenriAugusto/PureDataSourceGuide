@@ -59,3 +59,10 @@ $::current_canvas itemconfigure $::current_tag -fill blue
 ```
 
 ::current_tag along with ::current_canvas
+
+
+
+
+# syntax
+
+toplevel.c = canvas where things will be drawn
