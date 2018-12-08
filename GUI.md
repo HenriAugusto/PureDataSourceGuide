@@ -1,9 +1,8 @@
-**TO DO: rename Creating Objects to Creating and Editing Objects!**
-
 - <a id="index-gui">[GUI](#gui)</a>
    - <a id="index-tcl-side">[TCL side](#tcl-side)</a>
       - <a id="index-how-the-gui-knows-what-to-draw">[How the GUI knows what to draw](#how-the-gui-knows-what-to-draw)</a>
-         - <a id="index-creating-objects">[Creating Objects](#creating-objects)</a>
+         - <a id="index-creating-and-editing-objects">[Creating and Editing Objects](#creating-and-editing-objects)</a>
+         - <a id="index-widget-naming-syntax">[Widget Naming Syntax](#widget-naming-syntax)</a>
    - <a id="index-c-side">[C side](#c-side)</a>
       - <a id="index-mouse-input:-handling">[Mouse Input: handling](#mouse-input-handling)</a>
       - <a id="index-inlets-and-outlets-positioning">[inlets and outlets positioning](#inlets-and-outlets-positioning)</a>
@@ -36,7 +35,7 @@ In the TCL side of things the main file related to canvases is [_pdtk_canvas.tcl
 
 The [C side](#c-side) of the GUI tells each canvas what to draw by creating (and modifying) widgets on it.
 
-#### [Creating objects](#index-creating-objects)
+#### [Creating and editing objects](#index-creating--and-editing-objects)
 
 when you're typing in an object there are actually two widgets in the canvas.
 
@@ -62,7 +61,7 @@ _____ ?
 The tcl stuff is on [_pdtk_text.tcl_](https://github.com/pure-data/pure-data/blob/master/tcl/pdtk_text.tcl)
 
 
-# syntax
+### Widget Naming Syntax
 
 toplevel.c = canvas where things will be drawn
 
