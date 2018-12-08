@@ -1,3 +1,5 @@
+**TO DO: rename Creating Objects to Creating and Editing Objects!**
+
 - <a id="index-gui">[GUI](#gui)</a>
    - <a id="index-tcl-side">[TCL side](#tcl-side)</a>
       - <a id="index-how-the-gui-knows-what-to-draw">[How the GUI knows what to draw](#how-the-gui-knows-what-to-draw)</a>
