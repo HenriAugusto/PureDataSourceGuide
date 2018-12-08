@@ -42,7 +42,8 @@ when you're typing in an object there are actually two widgets in the canvas.
 
 One is a text one and the other is a rectangle one. The rectangle one has exactly the same tag but with an _"R"_ in the end. You can see it by using PD with the **"-d 1"** command line flag and editing an object.
 
-Each text input is controlled by an [`t_rtext`](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/t_rtext.md#t_rtext) struct and it's respective methods.
+
+In the C side, each text input is controlled by an [`t_rtext`](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/t_rtext.md#t_rtext) struct and it's respective methods.
 
 ```tcl
 set rectangle "$::current_tag"
@@ -53,7 +54,12 @@ $::current_canvas itemconfigure $rectangle -fill red
 $::current_canvas itemconfigure $::current_tag -fill blue
 ```
 
-::current_tag along with ::current_canvas
+
+_____ ?
+
+`**::current_tag along with ::current_canvas**`
+
+The tcl stuff is on [_pdtk_text.tcl_](https://github.com/pure-data/pure-data/blob/master/tcl/pdtk_text.tcl)
 
 
 # syntax
