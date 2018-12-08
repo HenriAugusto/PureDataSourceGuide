@@ -1,10 +1,11 @@
 - <a id="index-gui">[GUI](#gui)</a>
-   - <a id="index-c-side">[C side](#c-side)</a>
-      - <a id="index-mouse-input:-handling">[Mouse Input: handling](#mouse-input:-handling)</a>
-      - <a id="index-inlets-and-outlets-positioning">[inlets and outlets positioning](#inlets-and-outlets-positioning)</a>
    - <a id="index-tcl-side">[TCL side](#tcl-side)</a>
       - <a id="index-how-the-gui-knows-what-to-draw">[How the GUI knows what to draw](#how-the-gui-knows-what-to-draw)</a>
          - <a id="index-creating-objects">[Creating Objects](#creating-objects)</a>
+   - <a id="index-c-side">[C side](#c-side)</a>
+      - <a id="index-mouse-input:-handling">[Mouse Input: handling](#mouse-input-handling)</a>
+      - <a id="index-inlets-and-outlets-positioning">[inlets and outlets positioning](#inlets-and-outlets-positioning)</a>
+
 
 Back to the [**main index**](https://github.com/HenriAugusto/my-pure-data-source-studies/blob/master/README.md#index-api)
 
@@ -19,23 +20,15 @@ PD has two separate parts for its gui. The C part and the TCL part. They communi
    
 See the **proc ::pd_bindings::sendkey** inside `pd_bindings.tcl` file and investigate how we can send the "alt" key state to canvas_key!
 
-## [C side](#index-C-side)
-
-### [Mouse Input: handling](#index-mouse-input:-handling)
-
-[`canvas_doclick`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_editor.c#L2286)
-
-### [Inlets and Outlets positioning](#index-inlets-and-outlets-positioning)
-
-The mathematical formula for positioning inlets and outlest is located in the method
-
-**glist_drawiofor** in the file `g_text.c`.
-
-I still didn't figure out how PD knows if the mouse is inside an inlet/outlet.
-
-anyway i should check tryconnect inside g_editor
-
 ## [TCL side](#index-tcl-side)
+
+Every PD PatchWindow is a canvas. But also there is a TK/TCL thing named canvas so that can create some confusion. Just to make things more confusing there is a canvas gui object in PD programming (the one you put with Ctrl+Shift+C).
+
+A [TK/TCL canvas](https://www.tcl.tk/man/tcl8.4/TkCmd/canvas.htm) is like a drawing board to which you send instructions of what will be drawn on screen. A PD canvas is a patch window. The TK/TCL canvas actually gets the _"PatchWindow"_ tag.
+
+Throughout both the TCL code and the C code patch windows will be called canvases.
+
+In the TCL side of things the main file related to canvases is [_pdtk_canvas.tcl_](https://github.com/pure-data/pure-data/blob/master/tcl/pdtk_canvas.tcl).
 
 ### [How the GUI knows what to draw](#index-how-the-gui-knows-what-to-draw)
 
@@ -61,8 +54,24 @@ $::current_canvas itemconfigure $::current_tag -fill blue
 ::current_tag along with ::current_canvas
 
 
-
-
 # syntax
 
 toplevel.c = canvas where things will be drawn
+
+## [C side](#index-C-side)
+
+### [Mouse Input handling](#index-mouse-input-handling)
+
+[`canvas_doclick`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/g_editor.c#L2286)
+
+### [Inlets and Outlets positioning](#index-inlets-and-outlets-positioning)
+
+The mathematical formula for positioning inlets and outlest is located in the method
+
+**glist_drawiofor** in the file `g_text.c`.
+
+I still didn't figure out how PD knows if the mouse is inside an inlet/outlet.
+
+anyway i should check tryconnect inside g_editor
+
+
