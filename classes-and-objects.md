@@ -49,4 +49,45 @@ typedef struct _gobj        /* a graphical object */
 
 So inside **t_object** (*_text*) there is a **t_gobj**, which is a linked list. 
 
-Still i can't figure what **t_pd** is.
+Still i can't figure what `t_pd` is. **Let's find out.**
+
+[`t_pd` is an alias for `t_class`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/m_pd.h#L213)
+
+```C
+typedef t_class *t_pd; /* pure datum: nothing but a class pointer */
+```
+
+Here is the [definition of `t_class`](https://github.com/pure-data/pure-data/blob/7c27aa0ad505bb4802eee3fc40886836c814353f/src/m_imp.h#L31)
+
+```C
+struct _class
+{
+    t_symbol *c_name;                   /* name (mostly for error reporting) */
+    t_symbol *c_helpname;               /* name of help file */
+    t_symbol *c_externdir;              /* directory extern was loaded from */
+    size_t c_size;                      /* size of an instance */
+#ifdef PDINSTANCE
+    t_methodentry **c_methods;          /* methods other than bang, etc below */
+#else
+    t_methodentry *c_methods;
+#endif
+    int c_nmethod;                      /* number of methods */
+    t_method c_freemethod;              /* function to call before freeing */
+    t_bangmethod c_bangmethod;          /* common methods */
+    t_pointermethod c_pointermethod;
+    t_floatmethod c_floatmethod;
+    t_symbolmethod c_symbolmethod;
+    t_listmethod c_listmethod;
+    t_anymethod c_anymethod;
+    const struct _widgetbehavior *c_wb; /* "gobjs" only */
+    const struct _parentwidgetbehavior *c_pwb;/* widget behavior in parent */
+    t_savefn c_savefn;                  /* function to call when saving */
+    t_propertiesfn c_propertiesfn;      /* function to start prop dialog */
+    struct _class *c_next;
+    int c_floatsignalin;                /* onset to float for signal input */
+    char c_gobj;                        /* true if is a gobj */
+    char c_patchable;                   /* true if we have a t_object header */
+    char c_firstin;                 /* if patchable, true if draw first inlet */
+    char c_drawcommand;             /* a drawing command for a template */
+};
+```
