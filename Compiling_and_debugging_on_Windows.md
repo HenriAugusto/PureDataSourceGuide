@@ -18,7 +18,7 @@ Note that the .dll you are compiling should be significantly bigger than the one
 
 If you've followed the `INSTALL.txt` suggestion and is using MinGW then you already have [gdb](https://www.gnu.org/software/gdb/).
 
-Keep in hand [this guide](https://condor.depaul.edu/glancast/373class/docs/gdb.html) (but note that it misses `backtrack` / `bt`
+Keep in hand [this guide](https://condor.depaul.edu/glancast/373class/docs/gdb.html) (its more concise but misses `backtrack` / `bt`) or [this one](http://www.yolinux.com/TUTORIALS/GDB-Commands.html) which is bigger and more complete
 
 - open the MingW2
 - `cd "path_to_pd/bin"`
