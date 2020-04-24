@@ -2,7 +2,7 @@
 
 ## Compiling
 
-- See `INSTALL.txt` in the pd dir (and also msw/msw-app.sh if you want to make the app in a different dir)
+- See **INSTALL.txt** in the pd dir (and also **msw/msw-app.sh** if you want to make the app in a different dir)
 - After installed MinGW be sure to execute `mingw32.exe` instead of `msys2.exe`
 - run `cd "path to your pd folder"` before typing commands (you can use shift+insert to paste)
 - You only need to run make app (or msw-app.sh) once. Then you just change the core, run "make" and copy the `your_pd_dir/bin/pd.dll` into `your_pd_dir/pd-0.50.2/bin/`
@@ -22,7 +22,8 @@ Keep in hand [this guide](https://condor.depaul.edu/glancast/373class/docs/gdb.h
 
 - open the MingW2
 - `cd "path_to_pd/bin"`
-- `gdb pd` (or `gdb --gdb_args "pd <pd_args>"` if you need to pass arguments to gdb or pd)
+- `gdb pd`  (do **not** use `.exe` so it will load symbols from `pd.dll`)
+   - (or `gdb --gdb_args "pd <pd_args>"` if you need to pass arguments to gdb or pd)
 - optionally you can start with a breakpoint
    - `break canvas_key` (Or other function. You can also specify specific lines)
    - use `step`, `next`, `skip`, `continue`, etc
