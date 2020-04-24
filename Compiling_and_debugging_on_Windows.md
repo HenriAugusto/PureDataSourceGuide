@@ -6,9 +6,10 @@
 - After installed MinGW be sure to execute `mingw32.exe` instead of `msys2.exe`
 - run `cd "path to your pd folder"` before typing commands (you can use shift+insert to paste)
 - You only need to run make app (or msw-app.sh) once. Then you just change the core, run "make" and copy the `your_pd_dir/bin/pd.dll` into `your_pd_dir/pd-0.50.2/bin/`
+   - Note that the .dll you are compiling should be significantly bigger than the one in the compiled folder (because it has all the debugging symbols and information)
+
 - If you're using [git](https://git-scm.com/) all those things in your "pd-name_of_your_compile_folder" will appear as modifications in your working directory. Open the (hidden) `.git` folder and go open the ´info/exlude´ in your text editor and add `pd-*/` to it and save.
 
-Note that the .dll you are compiling should be significantly bigger than the one in the compiled folder (because it has all the debugging symbols and information)
 
 ## Debugging
 
