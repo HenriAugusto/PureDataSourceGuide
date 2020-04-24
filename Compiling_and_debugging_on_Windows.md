@@ -58,4 +58,8 @@ Make sure
    - `gdb pd`
    - `run`
    - close pd
-   - symbols are loaded, you can set break poitns
+   - symbols are loaded, you can set break points
+- you can print variables!
+   - let's say you're inside `iemgui_label`.
+   - you can type print s->s_name to see what is the string in the `t_symbol`
+   
