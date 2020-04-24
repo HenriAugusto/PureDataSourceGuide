@@ -22,8 +22,10 @@ Keep in hand [this guide](https://condor.depaul.edu/glancast/373class/docs/gdb.h
 
 - open the MingW2
 - `cd "path_to_pd/bin"`
-- `gdb pd`  (do **not** use `.exe` so it will load symbols from `pd.dll`)
+- `gdb pd`
    - (or `gdb --gdb_args "pd <pd_args>"` if you need to pass arguments to gdb or pd)
+- `symbol-file D:/pd-debug/bin/pd.dll`
+- `target exec D:/pd-debug/bin/pd.exe`
 - optionally you can start with a breakpoint
    - `break canvas_key` (Or other function. You can also specify specific lines)
    - use `step`, `next`, `skip`, `continue`, etc
@@ -49,3 +51,11 @@ Make sure
 - the paths doesn't contain spaces
 - the paths are not inside ""
 - the paths uses forward slashes (`/ ) instead of backward slashes (`\`)
+
+### tips
+
+- If you've forgot `symboml-file` and `target exec` you can just
+   - `gdb pd`
+   - `run`
+   - close pd
+   - symbols are loaded, you can set break poitns
