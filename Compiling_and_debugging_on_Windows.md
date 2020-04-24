@@ -62,4 +62,5 @@ Make sure
 - you can print variables!
    - let's say you're inside `iemgui_label`.
    - you can type print s->s_name to see what is the string in the `t_symbol`
+- for printing a function or line in a file use `list <file>:<func/line>`
    
