@@ -111,3 +111,5 @@ Comments starts with `#`.
 Put this code in the same folder as `pd.exe` with a _gdb_ extension and run
 
 `gdb --command=myscript.dgb`
+
+A good idea is to name the file the same as the branch you're testing.
