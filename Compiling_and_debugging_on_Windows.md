@@ -67,6 +67,8 @@ Make sure
    
 ### Scripting
 
+[reference](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-Files.html#Command-Files)
+
 You can automate some tedious tasks! If you're working on a specific function and want to always break at that function and set the display of the same variables, for example, it can get pretty tedious and repetitive running all the commands at the same time.
 
 <details>
