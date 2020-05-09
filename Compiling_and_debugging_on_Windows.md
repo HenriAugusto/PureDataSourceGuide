@@ -2,7 +2,7 @@
 
 ## Compiling
 
-- See **INSTALL.txt** in the pd dir (and also **msw/msw-app.sh** if you want to make the app in a different dir)
+- See instructions in **INSTALL.txt** in the pd dir (and also **msw/README.txt** if you want to make the app in a different dir)
 - After installed MinGW be sure to execute `mingw32.exe` instead of `msys2.exe`
 - run `cd "path to your pd folder"` before typing commands (you can use shift+insert to paste)
 - You only need to run make app (or msw-app.sh) once. Then you just change the core, run "make" and copy the `your_pd_dir/bin/pd.dll` into `your_pd_dir/pd-0.50.2/bin/`
