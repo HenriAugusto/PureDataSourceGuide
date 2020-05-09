@@ -65,3 +65,49 @@ Make sure
    - you can type print s->s_name to see what is the string in the `t_symbol`
 - for printing a function or line in a file use `list <file>:<func/line>`
    
+### Scripting
+
+You can automate some tedious tasks! If you're working on a specific function and want to always break at that function and set the display of the same variables, for example, it can get pretty tedious and repetitive running all the commands at the same time.
+
+<details>
+  <summary>Here's an example scripting file</summary>
+
+```   
+# http://sourceware.org/gdb/wiki/FAQ: to disable the
+# "---Type <return> to continue, or q <return> to quit---"
+# in batch mode:
+
+symbol-file pd.dll
+target exec pd.exe
+
+# set a breakpoint at iemgui_label.
+# it uses l (list) to show us more context of the function
+# and sets display of some variables
+b iemgui_label
+commands 1
+	l
+	display s->s_name
+	display iemgui->x_lab->s_name
+	display iemgui->x_lab_unexpanded->s_name
+end
+
+# sets another breakpoint to show the backtrace and
+# also sets the display of some variables
+b iemgui_properties
+commands 2
+	bt
+	display (*srl[0])->s_name
+	display (*srl[1])->s_name
+	display (*srl[2])->s_name
+end
+
+#to automatically start pd
+run
+```
+</details>
+
+Comments starts with `#`.
+
+Put this code in the same folder as `pd.exe` with a _gdb_ extension and run
+
+`gdb --command=myscript.dgb`
