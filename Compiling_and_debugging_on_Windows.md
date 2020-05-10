@@ -115,3 +115,5 @@ Put this code in the same folder as `pd.exe` with a _gdb_ extension and run
 `gdb --command=myscript.dgb`
 
 A good idea is to name the file the same as the branch you're testing.
+
+This is a simple example just to illustrate command files. A "real" one might be more complicated. In the example the display command will be executed multiple times thus the variables will be displayed multiple times. (You can quit and run gdb again to fix that in case you don't want to put conditions in your code)
