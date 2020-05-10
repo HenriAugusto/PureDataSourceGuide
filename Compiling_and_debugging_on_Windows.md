@@ -62,7 +62,7 @@ Ok, you're in GDB but you notice some strang~er~ things happening.
 
 Solution: use `winpty` (see [this issue](https://github.com/msys2/MINGW-packages/issues/5353))
 
-In Mingw32 install `winpty` and them wrap your gdb calls with it!
+In Mingw32 install `winpty` and them wrap your `gdb` calls with it!
 
 ```
 pacman -S winpty
