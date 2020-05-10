@@ -83,6 +83,7 @@ Now the console works as expected and the output is colored.
    - let's say you're inside `iemgui_label`.
    - you can type print s->s_name to see what is the string in the `t_symbol`
 - for printing a function or line in a file use `list <file>:<func/line>`
+- use <kbd>tab</kbd> once or twice for autocompletion (of `gdb` commands and even of variable names!)
    
 ### Scripting
 
