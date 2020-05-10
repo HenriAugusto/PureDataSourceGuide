@@ -53,6 +53,22 @@ Make sure
 - the paths are not inside ""
 - the paths uses forward slashes (`/ ) instead of backward slashes (`\`)
 
+### how to fix console behavior
+
+Ok, you're in GDB but you notice some strang~er~ things happening. 
+
+- You press the the up arrow keys to get the last command on your history and what happens? The cursor starts freaking out and moving up.
+- You noticed you've made a typo and press the left keys to fix it and the cursor seems to move correctly but when you type some other freakishly behavior is observer.
+
+Solution: use winpty (see [this issue](https://github.com/msys2/MINGW-packages/issues/5353))
+
+In Mingw32 install winpty and them wrap your gdb calls with it!
+
+```
+pacman -S winpty
+winpty gdb
+```
+
 ### tips
 
 - If you've forgot `symboml-file` and `target exec` you can just
