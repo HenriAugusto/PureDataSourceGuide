@@ -51,14 +51,14 @@ Make sure
 
 - the paths doesn't contain spaces
 - the paths are not inside ""
-- the paths uses forward slashes (`/ ) instead of backward slashes (`\`)
+- the paths uses forward slashes (`/` ) instead of backward slashes (`\`)
 
 ### how to fix console behavior
 
 Ok, you're in GDB but you notice some strang~er~ things happening. 
 
 - You press the the up arrow keys to get the last command on your history and what happens? The cursor starts freaking out and moving up.
-- You noticed you've made a typo and press the left keys to fix it and the cursor seems to move correctly but when you type some other freakishly behavior is observer.
+- You noticed you've made a typo and press the left keys to fix it and the cursor seems to move correctly - but when you type some other freakishly behavior is observed.
 - Your terminal is all B&W like a 20's picture.
 
 Solution: use `winpty` (see [this issue](https://github.com/msys2/MINGW-packages/issues/5353))
